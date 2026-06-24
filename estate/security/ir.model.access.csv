@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_real_state,access_real_state,estate.model_real_estate,,1,1,1,1
+access_estate_property_type,access_estate_property_type,estate.model_estate_property_type,,1,1,1,1
+access_estate_property_offer,access_estate_property_offer,estate.model_estate_property_offer,,1,1,1,1
+access_estate_property_tag,access_estate_property_tag,estate.model_estate_property_tag,,1,1,1,1
+access_real_state_manager,access_real_state_manager,estate.model_real_estate,,1,1,1,1

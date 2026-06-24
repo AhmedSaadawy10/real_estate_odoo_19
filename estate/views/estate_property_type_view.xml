@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+<!--        &lt;!&ndash;define estate property search view &ndash;&gt;-->
+        <record id="estate_property_type_view_search" model="ir.ui.view">
+            <field name="name">estate.property.type.view.search</field>
+            <field name="model">estate.property.type</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name" string="Title"/>
+
+                    <group>
+                        <filter name="group_by_name" context="{'group_by': 'name'}"/>
+                    </group>
+
+                </search>
+            </field>
+        </record>
+        <!--define estate property form view -->
+        <record id="estate_property_type_view_form" model="ir.ui.view">
+            <field name="name">estate.property.type.view.form</field>
+            <field name="model">estate.property.type</field>
+            <field name="arch" type="xml">
+                <form>
+
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button
+                                    name="action_open_property_ids"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-list">
+                                    <field name="property_count" widget="line_count"/>
+                            </button>
+
+                             <button
+                                    name="action_open_offer_ids"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-bar">
+                                    <field name="offer_count" widget="line_count"/>
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <div class="oe_edit_only">
+                                <label for="name"/>
+                            </div>
+                            <h1 class="mb32">
+                                <field name="name" class="mb16"/>
+                            </h1>
+                        </div>
+                        <!--                        <group>-->
+                        <!--                            <field name="name" string="Title"/>-->
+                        <!--                        </group>-->
+                        <notebook>
+                            <page name="properties" string="Properties">
+                                <field name="property_ids">
+                                    <list>
+                                        <field name="name"/>
+                                        <field name="expected_price"/>
+                                        <field name="state"/>
+                                    </list>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!--define estate property list view -->
+        <record id="estate_property_type_view_tree" model="ir.ui.view">
+            <field name="name">estate.property.type.view.tree</field>
+            <field name="model">estate.property.type</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="sequence" widget="handle"/>
+                    <field name="name" string="Title"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="estate_property_type_action" model="ir.actions.act_window">
+            <field name="name">Estate Property Type</field>
+            <field name="res_model">estate.property.type</field>
+            <field name="view_mode">list,form</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--define Estate Menu For real state model -->
+        <menuitem id="estate_root_menu" name="Real Estate">
+            <menuitem id="real_estate_menu" name="Advertisements">
+                <menuitem id="real_estate_menu_action" name="Estates" action="real_estate_action"/>
+                <menuitem id="estate_offer_menu_action" name="Property Offers" action="estate_property_offer_action"/>
+            </menuitem>
+
+            <menuitem id="estate_setting_menu" name="Setting">
+                <menuitem id="estate_property_type_menu_action" name="Property Types"
+                          action="estate_property_type_action"/>
+                <menuitem id="estate_property_tag_menu_action" name="Property Tags"
+                          action="estate_property_tag_action"/>
+            </menuitem>
+
+        </menuitem>
+
+    </data>
+</odoo>
